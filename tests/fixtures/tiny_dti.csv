@@ -1,0 +1,4 @@
+measurement_id,source_record_id,compound_id,smiles,target_id,activity_type,relation,value,unit
+m1,r1,C1,CCO,P12345,IC50,=,100,nM
+m2,r2,C2,invalid,P99999,Ki,>,10,uM
+

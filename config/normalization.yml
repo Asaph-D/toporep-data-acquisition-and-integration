@@ -1,0 +1,46 @@
+schema_version: 1
+gene_id:
+  canonical: ensembl_gene_id
+  strip_ensembl_version: true
+  unresolved_policy: retain_in_mapping_exclude_from_qualified_matrix
+missing_values:
+  tokens: ["", "NA", "NaN", "null"]
+  never_replace_with_zero: true
+sources:
+  tcga:
+    input_unit: log2_tpm_plus_0_001
+    output_unit: log2_tpm_plus_0_001
+    derived_views: [tpm_inverse]
+  gtex:
+    input_unit: tpm
+    output_unit: tpm
+    derived_views: [log2_tpm_plus_1]
+  depmap:
+    input_unit: log2_tpm_plus_1
+    output_unit: log2_tpm_plus_1
+  lincs_cmap:
+    input_unit: modz
+    output_unit: modz
+    renormalize: false
+  geo:
+    processing_scope: series_and_platform
+    merge_platforms: false
+  arrayexpress:
+    processing_scope: experiment_and_platform
+    infer_missing_unit: false
+    single_cell_counts:
+      output_unit: log1p_cp10k
+      scale_factor: 10000
+      preserve_sparse_format: true
+  expression_atlas:
+    split_by_unit: true
+    columns_are: experimental_groups_not_samples
+    source_cell_encoding: five_number_summary
+    scalar_view: median
+    preferred_training_view: tpm
+batch_correction:
+  default: disabled
+  require_declared_contrast: true
+  forbid_if_confounded_with_biology: true
+disk_guard:
+  minimum_free_gb_before_heavy_step: 80

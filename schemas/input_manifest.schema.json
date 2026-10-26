@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://toporep.local/schemas/input_manifest.schema.json",
+  "title": "TOPOREP input manifest row",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["source", "source_release", "relative_path", "role", "format", "bytes", "sha256", "unit", "status", "reason"],
+  "properties": {
+    "source": {"type": "string", "minLength": 1},
+    "source_release": {"type": "string"},
+    "relative_path": {"type": "string", "minLength": 1},
+    "role": {"enum": ["matrix", "metadata", "assay", "mapping", "ontology"]},
+    "format": {"type": "string", "minLength": 1},
+    "compression": {"type": ["string", "null"]},
+    "bytes": {"type": "integer", "minimum": 0},
+    "sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+    "rows": {"type": ["integer", "null"], "minimum": 0},
+    "columns": {"type": ["integer", "null"], "minimum": 0},
+    "unit": {"type": ["string", "null"]},
+    "status": {"enum": ["accepted", "rejected", "blocked"]},
+    "reason": {"type": ["string", "null"]}
+  }
+}
+

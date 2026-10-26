@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://toporep.local/schemas/dti_assays.schema.json",
+  "title": "TOPOREP canonical DTI assay row",
+  "type": "object",
+  "required": ["measurement_id", "source", "source_record_id", "original_compound_id", "standard_inchikey", "original_target_id", "uniprot_id", "activity_type", "relation", "original_value", "original_unit", "evidence_type", "quality_tier", "qc_pass"],
+  "properties": {
+    "measurement_id": {"type": "string", "minLength": 1},
+    "source": {"enum": ["chembl", "bindingdb"]},
+    "source_record_id": {"type": "string", "minLength": 1},
+    "original_compound_id": {"type": "string"},
+    "standard_inchikey": {"type": ["string", "null"]},
+    "original_target_id": {"type": "string"},
+    "uniprot_id": {"type": ["string", "null"]},
+    "activity_type": {"enum": ["ki", "kd", "ic50", "ec50"]},
+    "relation": {"enum": ["=", "<", "<=", ">", ">="]},
+    "original_value": {"type": "number"},
+    "original_unit": {"type": "string"},
+    "molar_value": {"type": ["number", "null"], "exclusiveMinimum": 0},
+    "pactivity": {"type": ["number", "null"]},
+    "evidence_type": {"enum": ["measured_bioactivity", "verified_moa", "verified_indication", "text_mined", "cooccurrence", "computational_prediction"]},
+    "quality_tier": {"enum": ["gold", "silver", "auxiliary", "rejected"]},
+    "qc_pass": {"type": "boolean"},
+    "exclusion_reason": {"type": ["string", "null"]}
+  }
+}
+

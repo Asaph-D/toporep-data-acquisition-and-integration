@@ -1,0 +1,91 @@
+# Environnements locaux et caches Python
+.venv*/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Secrets et configuration locale
+.env
+.env.*
+!.env.example
+*.secrets
+*.secret
+secrets.env
+urls.env
+credentials*.json
+token*.json
+
+# Sources téléchargées, matrices et artefacts calculés
+data/
+datasets/
+normalized/
+releases/
+integration/
+
+# Outils locaux non distribués dans ce dépôt
+scripts/
+_meta/
+
+# Formats scientifiques/binaires générés
+*.parquet
+*.arrow
+*.feather
+*.h5
+*.hdf5
+*.gct
+*.gctx
+*.duckdb
+*.sqlite
+*.sqlite3
+*.pkl
+*.joblib
+
+# Archives et téléchargements partiels
+*.zip
+*.gz
+*.tgz
+*.tar
+*.7z
+*.part
+*.crdownload
+*.incomplete
+
+# Journaux, états d'exécution et fichiers temporaires
+*.log
+*.err
+*.pid
+*.tmp
+*.temp
+duckdb_temp/
+
+# Artefacts de compilation LaTeX (les .tex, .pdf et figures restent publiables)
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+
+# Éditeurs et système d'exploitation
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Rapports de sécurité ou de déploiement locaux
+git-deployment-audit.local.txt

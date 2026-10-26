@@ -1,0 +1,10 @@
+schema_version: 1
+activity_types: [ki, kd, ic50, ec50]
+thresholds_pactivity: [5.0, 6.0, 7.0]
+primary_tax_id: 9606
+primary_target_type: single_protein
+labels: [positive, negative_measured, ambiguous]
+unobserved_is_negative: false
+preserve_original_value_unit_relation: true
+allowed_molar_units: [M, mM, uM, nM, pM]
+

@@ -1,0 +1,6 @@
+schema_version: 1
+contrasts: []
+# Aucune correction de lot n'est autorisée avant déclaration d'un contraste.
+# Chaque entrée future devra porter : id, sources, biological_factor, batch_factor,
+# covariates, replicate_policy et justification.
+

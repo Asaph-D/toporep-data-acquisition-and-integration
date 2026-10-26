@@ -1,0 +1,27 @@
+{
+  "schema_version": "dti_assays_v1",
+  "source_releases": {
+    "bindingdb": "BindingDB_All_local_snapshot",
+    "chembl": "ChEMBL_37"
+  },
+  "main_stratum": {
+    "requires_standard_structure": true,
+    "requires_human_single_protein": true,
+    "requires_molar_activity": true
+  },
+  "quality_tiers": {
+    "gold": "main stratum; exact relation; source quality gold",
+    "silver": "main stratum; censored relation or source quality silver",
+    "auxiliary": "valid measured activity but target outside the human single-protein stratum",
+    "rejected": "missing or rejected standardized structure, or invalid required activity field"
+  },
+  "exact_duplicate_key": [
+    "source", "source_record_id", "source_assay_id", "source_document_id",
+    "standard_inchikey", "resolved_uniprot_id", "activity_type", "relation", "molar_value"
+  ],
+  "discordance_rule": {
+    "group": ["standard_inchikey", "resolved_uniprot_id", "activity_type"],
+    "minimum_pactivity_span": 2.0,
+    "meaning": "A spread of at least two log10 units (100-fold) is flagged for review; threshold-label conflicts are handled later in P3."
+  }
+}
