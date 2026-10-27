@@ -1,0 +1,15 @@
+schema_version: protein_groups_v1
+sequence_source:
+  database: UniProtKB/Swiss-Prot
+  local_archive: data/uniprot/_dl_uniprot_sprot.dat.gz
+  taxon: all_taxa_archive_filtered_by_requested_accession
+mmseqs2:
+  image: ghcr.io/soedinglab/mmseqs2@sha256:41b12b0d5f41432fa1b9976123da6e2e06e7fab49a34964f3b54ec038e5845d9
+  revision: 8cc5ce367b5638c4306c2d7cfc652dd099a4643f
+  identity_thresholds: [0.90, 0.70, 0.50]
+  coverage: 0.80
+  coverage_mode: 0
+  cluster_mode: 2
+  sensitivity: 7.5
+group_identifier: sha256_of_sorted_cluster_members
+

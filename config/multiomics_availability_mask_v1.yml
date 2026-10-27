@@ -1,0 +1,12 @@
+schema_version: multiomics_availability_mask_v1
+bits:
+  0: compound_lincs_signature
+  1: target_gene_registry
+  2: target_reactome
+  3: target_tcga_feature
+  4: target_gtex_feature
+  5: target_depmap_feature
+  6: target_lincs_gene_feature
+missing_semantics: false_means_unavailable_not_biological_zero
+imputation: none
+

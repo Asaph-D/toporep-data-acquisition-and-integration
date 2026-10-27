@@ -1,0 +1,15 @@
+schema_version: p4_reconstruction_v1
+scope: convergence_multiomics_p4_01_to_p4_05
+qualified_checkpoints:
+  - OMIQUE-1
+  - DTI-1
+  - GROUPS-1
+passes: 2
+comparison: sha256_scientific_artifacts
+volatile_outputs_excluded:
+  - timestamps
+  - status_files
+  - reports_containing_execution_time
+large_native_matrices:
+  policy: verify_and_reference_without_copy
+failure_policy: stop_on_first_error_or_hash_difference

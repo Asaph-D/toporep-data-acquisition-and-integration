@@ -89,3 +89,6 @@ Desktop.ini
 
 # Rapports de sécurité ou de déploiement locaux
 git-deployment-audit.local.txt
+
+# Preuves d'exécution locales (journaux, inspections Docker, incidents machine)
+rapports/preuves/

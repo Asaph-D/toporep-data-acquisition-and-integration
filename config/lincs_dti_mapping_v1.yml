@@ -1,0 +1,12 @@
+schema_version: lincs_dti_mapping_v1
+scope: LINCS_pert_type_trt_cp
+standardization: same_rdkit_recipe_as_dti
+confidence:
+  exact_reported_and_standardized: high
+  exact_reported_only: high
+  standardized_smiles: high
+  reported_standardized_conflict: rejected
+  no_dti_match: unmapped
+alias_policy: multiple_pert_ids_may_map_to_one_standard_inchikey
+name_only_mapping: forbidden
+

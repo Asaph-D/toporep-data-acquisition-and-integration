@@ -1,0 +1,13 @@
+schema_version: target_gene_pathway_mapping_v1
+target_universe: datasets/dti/groups/protein_clusters.parquet
+gene_mapping:
+  uniprot_source: data/uniprot/id_map.csv
+  registry: normalized/gene_registry/v1/genes.parquet
+  join: exact_case_insensitive_gene_symbol
+  free_text_target_name_fallback: forbidden
+pathway_mapping:
+  source: Reactome_UniProt2Reactome_All_Levels
+  species: Homo sapiens
+  duplicate_policy: one_edge_per_uniprot_reactome_with_evidence_aggregated
+unresolved_policy: preserve_and_report
+

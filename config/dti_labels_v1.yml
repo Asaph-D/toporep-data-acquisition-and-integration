@@ -1,0 +1,15 @@
+schema_version: dti_labels_v1
+thresholds_pactivity: [5.0, 6.0, 7.0]
+input_scope: qc_pass_true_only
+measurement_rules:
+  exact: "positive if pactivity >= threshold, otherwise negative_measured"
+  concentration_lt_or_le: "positive if bound pactivity >= threshold, otherwise ambiguous"
+  concentration_gt: "negative_measured if bound pactivity <= threshold, otherwise ambiguous"
+  concentration_ge: "negative_measured if bound pactivity < threshold, otherwise ambiguous"
+pair_rules:
+  conflict: "at least one definite positive and one definite negative"
+  positive: "at least one definite positive and no definite negative"
+  negative_measured: "at least one definite negative and no definite positive"
+  ambiguous: "conflict or only ambiguous censored evidence"
+negative_policy: "No unobserved pair is negative; every negative has at least one qualified measured activity."
+pair_quality: "gold when the final non-ambiguous label has at least one gold supporting measurement; silver otherwise"

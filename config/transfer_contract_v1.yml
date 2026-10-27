@@ -1,0 +1,37 @@
+schema_version: transfer_contract_v1
+scope: qualified_non_ambiguous_pairs_only
+split_generation_repository: evaluation_repository
+regimes:
+  cold_drug:
+    atomic_group: standard_inchikey
+    invariant: no_standard_inchikey_overlap_between_partitions
+  cold_target:
+    atomic_group: uniprot_id
+    invariant: no_uniprot_id_overlap_between_partitions
+  scaffold:
+    atomic_group: murcko_group_id
+    unavailable_policy: exclude_and_report
+    invariant: no_murcko_group_overlap_between_partitions
+  sequence_cluster:
+    default_threshold: 50
+    allowed_thresholds: [90, 70, 50]
+    unavailable_policy: exclude_and_report
+    invariant: no_selected_protein_cluster_overlap_between_partitions
+  scaffold_sequence:
+    default_sequence_threshold: 50
+    grouping_algorithm: connected_components_of_bipartite_scaffold_sequence_graph
+    invariant: neither_murcko_group_nor_selected_protein_cluster_may_overlap_between_partitions
+  temporal:
+    invariant: every_training_measurement_date_strictly_precedes_cutoff
+    missing_or_invalid_policy: exclude_from_temporal_regime_and_report
+fit_policy:
+  learned_preprocessing: fit_on_train_only
+  feature_selection: fit_on_train_only
+  imputation: fit_on_train_only
+  threshold_tuning: validation_only
+forbidden:
+  - random_pair_split_for_cold_regimes
+  - grouping_only_by_scaffold_sequence_tuple
+  - assigning_missing_groups_to_one_shared_unknown_group
+  - using_test_labels_to_balance_partitions
+

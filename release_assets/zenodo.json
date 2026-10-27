@@ -1,0 +1,12 @@
+{
+  "title": "Acquisition et intégration de données multi-omiques",
+  "upload_type": "dataset",
+  "description": "Paquet de qualification et de reproductibilité pour l'acquisition, la normalisation et l'intégration de données multi-omiques et de bioactivité.",
+  "creators": [{"name": "Dissociation de la topologie des réseaux de la pharmacologie"}],
+  "version": "1.0.0",
+  "publication_date": "2026-10-27",
+  "language": "fra",
+  "keywords": ["multi-omics", "drug-target interaction", "drug repurposing", "bioactivity", "transcriptomics"],
+  "access_right": "restricted",
+  "notes": "Le passage en accès ouvert exige une revue finale des licences source par source."
+}

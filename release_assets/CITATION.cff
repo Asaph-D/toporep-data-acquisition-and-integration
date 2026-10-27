@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "Si vous utilisez ces données, veuillez citer ce jeu et ses sources primaires."
+title: "Acquisition et intégration de données multi-omiques"
+type: dataset
+version: 1.0.0
+date-released: 2026-10-27
+authors:
+  - name: "Dissociation de la topologie des réseaux de la pharmacologie"
+abstract: >-
+  Données de bioactivité, axes omiques, groupes anti-redondance, masques de
+  disponibilité et index vers des preuves contextuelles publiques, préparés pour
+  étudier la généralisation mécanistique en repositionnement de médicaments.
+keywords:
+  - multi-omics
+  - drug-target interaction
+  - drug repurposing
+  - bioactivity
+  - transcriptomics
+license: LicenseRef-Multiple-Sources

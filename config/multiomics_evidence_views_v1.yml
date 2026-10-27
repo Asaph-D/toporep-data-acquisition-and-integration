@@ -1,0 +1,34 @@
+schema_version: multiomics_evidence_views_v1
+hypothesis_origin: structure_target
+omics_role: optional_contextual_evidence
+missing_semantics: unavailable_is_neutral
+learned_imputation: forbidden
+global_lincs_aggregation: forbidden
+preserve_context:
+  - cell_id
+  - pert_idose
+  - pert_itime
+required_model_ablations:
+  - structure_target_only
+  - one_source_at_a_time
+  - leave_one_source_out
+  - availability_stratified
+native_sources:
+  lincs_cmap:
+    matrix: normalized/omics/lincs_cmap/v1/level5_modz.gctx
+    dataset: /0/DATA/0/matrix
+    unit: MODZ
+    entity_axis: 0
+    feature_axis: 1
+  tcga:
+    matrix: normalized/omics/tcga/v1/matrix.h5
+    dataset: /matrix
+    unit: log2(TPM+0.001)
+  gtex:
+    matrix: normalized/omics/gtex/v1/matrix.h5
+    dataset: /matrix
+    unit: TPM
+  depmap:
+    matrix: normalized/omics/depmap/v1/matrix.h5
+    dataset: /matrix
+    unit: log2(TPM+1)

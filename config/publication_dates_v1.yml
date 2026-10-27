@@ -1,0 +1,14 @@
+schema_version: publication_dates_v1
+grain: one_row_per_dti_measurement
+sources:
+  chembl:
+    field: documents.year
+    precision: year
+  bindingdb:
+    field: Date of publication
+    accepted_formats: [M/D/YYYY, YYYY-MM-DD, YYYY]
+    precision: day_when_parseable_otherwise_year
+missing_policy: explicit_not_temporally_eligible
+cutoff_rule: training_publication_date_strictly_before_cutoff
+warning: source_release_or_database_ingestion_dates_must_not_be_used_as_publication_dates
+

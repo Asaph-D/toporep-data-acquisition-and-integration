@@ -1,0 +1,13 @@
+schema_version: chemical_groups_v1
+rdkit_version: 2026.09.1
+murcko:
+  representation: canonical_isomeric_smiles
+  acyclic_policy: one_explicit_empty_scaffold_group
+ecfp4:
+  algorithm: Morgan
+  radius: 2
+  diameter: 4
+  bits: 2048
+  include_chirality: true
+  group_definition: exact_sha256_of_256_byte_fingerprint
+note: ECFP4 groups are exact fingerprint-equivalence groups, not a similarity clustering.
